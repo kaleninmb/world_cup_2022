@@ -1,0 +1,22 @@
+{% if country_list %}
+<style>
+    table, th, tr, td{
+        border:1px solid black;
+    }
+</style>
+<table >
+    <tr>
+        <th>Country</th>
+        <th>Created_at</th>
+    </tr>
+    {% for country in country_list %}
+          <tr>
+            <td><a href="{% url 'CountryGroup' country.id %}">{{country.name}}</a></td>
+            <td>{{country.created_at|date:"d/m/Y H:i:s"}}</td>
+          </tr>
+
+    {% endfor %}
+</table>
+{% else %}
+    <p>No countries are available.</p>
+{% endif %}

@@ -1,0 +1,5 @@
+{% if country_group %}
+    <p> {{country_group.country.name }} belongs to group {{country_group.group.group_name}}.</p>
+{% else %}
+    <p>No group found.</p>
+{% endif %}
