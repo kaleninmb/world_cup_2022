@@ -1,5 +1,25 @@
-{% if country_group %}
-    <p> {{country_group.country.name }} belongs to group {{country_group.group.group_name}}.</p>
-{% else %}
-    <p>No group found.</p>
-{% endif %}
+{% extends 'base.html' %}
+{% block styles %}
+{% endblock %}
+{% block content_title %} Group Belonging
+{% endblock %}
+{% block content %}
+<div class="col-lg-12">
+    <div class="card shadow lg-12">
+        <div class="card-header">
+            <a href="{% url 'CountryList' %}"><button class="btn btn-primary">Show full list</button></a>
+        </div>
+        <div class="card-body">
+            {% if country_group %}
+            <p> {{country_group.country.name }} belongs to group {{country_group.group.group_name}}.</p>
+            {% else %}
+            <p>No group found.</p>
+            {% endif %}
+        </div>
+    </div>
+
+
+</div>
+{% endblock %}
+{% block scripts %}
+{% endblock %}

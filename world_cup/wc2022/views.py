@@ -4,7 +4,8 @@ from .controllers import country
 
 # Create your views here.
 def index(request):
-    return HttpResponse("Hello, World. You're in the world cup 2022 index page")
+    template = loader.get_template('wc2022/index.html')
+    return HttpResponse(template.render({}, request))
 
 def country_list(request):
     template = loader.get_template('wc2022/country_list.html')
